@@ -17,9 +17,8 @@ const ServiceCard = ({ service }: ServiceCardProps) => {
         <h3 className="mt-4 text-xl font-semibold text-foreground">{service.title}</h3>
         <p className="mt-3 text-sm text-muted">{service.summary}</p>
       </div>
-      <div className="mt-6 flex items-center justify-between text-sm font-semibold text-foreground">
-        <span>Conocer servicio</span>
-        <span className="text-accent transition group-hover:translate-x-1">-&gt;</span>
+      <div className="mt-6 flex items-center justify-center text-sm font-semibold text-foreground">
+        <span className="text-accent/80">Conocer servicio</span>
       </div>
     </Link>
   )

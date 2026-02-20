@@ -26,7 +26,7 @@ const WhatsAppButton = ({
     primary: 'px-6 py-3 bg-accent text-black hover:bg-accent/90 shadow-soft',
     ghost: 'px-6 py-3 border border-accent text-accent hover:bg-accent/10',
     floating:
-      'h-16 w-16 rounded-full bg-accent text-black shadow-glow ring-1 ring-accent/40 transition hover:scale-105 hover:shadow-[0_20px_60px_-20px_rgba(255,212,0,0.5)]',
+      'h-16 w-16 rounded-full bg-accent text-black shadow-glow ring-1 ring-accent/40 transition hover:scale-105',
     icon: 'h-10 w-10 rounded-full border border-border/30 bg-card text-foreground hover:border-accent',
   }
 

@@ -3,7 +3,6 @@ import PageHero from '../components/PageHero'
 import SectionHeader from '../components/SectionHeader'
 import ServiceCard from '../components/ServiceCard'
 import Seo from '../components/Seo'
-import WhatsAppButton from '../components/WhatsAppButton'
 import { services } from '../data/services'
 
 const Servicios = () => {
@@ -17,8 +16,6 @@ const Servicios = () => {
         eyebrow="Servicios"
         title="Soluciones pensadas para cada etapa del negocio"
         subtitle="Desde la base estrategica hasta la ejecucion diaria, con procesos claros y foco en resultados."
-        topic="Servicios JD Media"
-        page="Servicios"
       />
 
       <section className="section">
@@ -29,9 +26,6 @@ const Servicios = () => {
               title="Todo lo que hacemos para impulsar tu marca"
               subtitle="Elegi el servicio que mejor se adapta a tus objetivos y conversemos."
             />
-            <WhatsAppButton topic="Servicios JD Media" page="Servicios Listado" variant="ghost">
-              Consultar por WhatsApp
-            </WhatsAppButton>
           </div>
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (

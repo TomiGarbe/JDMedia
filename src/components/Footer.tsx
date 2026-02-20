@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import logo from '../assets/logo-completo.jpeg'
+import logo from '../assets/logo-letras.jpeg'
 import instagramIcon from '../assets/instagram.svg'
 import tiktokIcon from '../assets/tiktok.svg'
 import whatsappIcon from '../assets/whatsapp.svg'
@@ -44,25 +44,25 @@ const Footer = () => {
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">Secciones</p>
             <nav className="flex flex-col gap-2 text-muted">
               <Link
-                className="hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 to="/servicios"
               >
                 Servicios
               </Link>
               <Link
-                className="hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 to="/clientes"
               >
                 Clientes
               </Link>
               <Link
-                className="hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 to="/nosotros"
               >
                 Nosotros
               </Link>
               <Link
-                className="hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 to="/insights"
               >
                 Insights
@@ -73,7 +73,7 @@ const Footer = () => {
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">Social</p>
             <nav className="flex flex-col gap-2 text-muted">
               <a
-                className="hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 href={socialLinks.instagram}
                 target="_blank"
                 rel="noreferrer noopener"
@@ -81,7 +81,7 @@ const Footer = () => {
                 Instagram
               </a>
               <a
-                className="hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 href={socialLinks.tiktok}
                 target="_blank"
                 rel="noreferrer noopener"

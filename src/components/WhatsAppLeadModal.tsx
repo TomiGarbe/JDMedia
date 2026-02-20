@@ -78,7 +78,7 @@ const WhatsAppLeadModal = () => {
         role="dialog"
         aria-modal="true"
         aria-labelledby="whatsapp-modal-title"
-        className="relative w-full max-w-md rounded-2xl border border-border/30 bg-card p-6 text-foreground shadow-soft"
+        className="relative w-full max-w-md rounded-2xl border border-accent bg-card p-6 text-foreground shadow-soft"
       >
         <button
           type="button"
@@ -98,7 +98,7 @@ const WhatsAppLeadModal = () => {
         <form onSubmit={handleSubmit} className="mt-6 space-y-4">
           <div>
             <label htmlFor="lead-name" className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
-              Nombre
+              Tu Nombre
             </label>
             <input
               ref={nameRef}
@@ -140,19 +140,12 @@ const WhatsAppLeadModal = () => {
             </button>
           ) : null}
 
-          <div className="flex flex-col gap-3 pt-2 sm:flex-row">
+          <div className="flex flex-col gap-3 pt-2 sm:flex-row justify-center">
             <button
               type="submit"
               className="inline-flex w-full items-center justify-center rounded-full bg-accent px-5 py-3 text-sm font-semibold text-black transition hover:bg-accent/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent sm:w-auto"
             >
               Continuar a WhatsApp
-            </button>
-            <button
-              type="button"
-              onClick={closeWhatsApp}
-              className="inline-flex w-full items-center justify-center rounded-full border border-border/30 bg-background px-5 py-3 text-sm font-semibold text-foreground transition hover:border-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent sm:w-auto"
-            >
-              Cancelar
             </button>
           </div>
         </form>

@@ -3,6 +3,7 @@ import PageHero from '../components/PageHero'
 import SectionHeader from '../components/SectionHeader'
 import ServiceCard from '../components/ServiceCard'
 import Seo from '../components/Seo'
+import instagramIcon from '../assets/instagram.svg'
 import { clients } from '../data/clients'
 import { services } from '../data/services'
 
@@ -26,11 +27,11 @@ const Home = () => {
                 <p>Estrategia clara y accionable para cada canal.</p>
               </div>
               <div className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 rounded-full bg-teal" />
+                <span className="mt-1 h-2 w-2 rounded-full bg-accent" />
                 <p>Optimizacion semanal con datos reales.</p>
               </div>
               <div className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 rounded-full bg-ink" />
+                <span className="mt-1 h-2 w-2 rounded-full bg-accent" />
                 <p>Marcas con identidad profesional y coherente.</p>
               </div>
             </div>
@@ -49,19 +50,43 @@ const Home = () => {
             <div className="card p-6">
               <h3 className="text-lg font-semibold">Lo que suele pasar</h3>
               <ul className="mt-4 space-y-3 text-sm text-muted">
-                <li>Publicas y no pasa nada.</li>
-                <li>Falta tiempo para sostener el contenido.</li>
-                <li>Anuncios sin resultados reales.</li>
-                <li>Todo depende de vos.</li>
+                <div className="flex items-start gap-3">
+                  <span className="mt-1 h-2 w-2 rounded-full bg-accent" />
+                  <li>Publicas y no pasa nada.</li>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="mt-1 h-2 w-2 rounded-full bg-accent" />
+                  <li>Falta tiempo para sostener el contenido.</li>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="mt-1 h-2 w-2 rounded-full bg-accent" />
+                  <li>Anuncios sin resultados reales.</li>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="mt-1 h-2 w-2 rounded-full bg-accent" />
+                  <li>Todo depende de vos.</li>
+                </div>
               </ul>
             </div>
             <div className="card p-6">
               <h3 className="text-lg font-semibold">Lo que ganas con JD Media</h3>
               <ul className="mt-4 space-y-3 text-sm text-muted">
-                <li>Estrategia clara y coordinada.</li>
-                <li>Ahorro de tiempo y foco en tu negocio.</li>
-                <li>Marca profesional y consistente.</li>
-                <li>Optimizacion semanal con datos medibles.</li>
+                <div className="flex items-start gap-3">
+                  <span className="mt-1 h-2 w-2 rounded-full bg-accent" />
+                  <li>Estrategia clara y coordinada.</li>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="mt-1 h-2 w-2 rounded-full bg-accent" />
+                  <li>Ahorro de tiempo y foco en tu negocio.</li>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="mt-1 h-2 w-2 rounded-full bg-accent" />
+                  <li>Marca profesional y consistente.</li>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="mt-1 h-2 w-2 rounded-full bg-accent" />
+                  <li>Optimizacion semanal con datos medibles.</li>
+                </div>
               </ul>
             </div>
           </div>
@@ -106,7 +131,7 @@ const Home = () => {
               'Optimizacion continua',
               'Medicion y proximos pasos',
             ].map((step, index) => (
-              <div key={step} className="card flex flex-col gap-4 p-5">
+              <div key={step} className="card flex flex-col gap-4 p-5 border-accent/30">
                 <span className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
                   Paso {index + 1}
                 </span>
@@ -146,6 +171,16 @@ const Home = () => {
                   <div>
                     <p className="text-sm font-semibold text-foreground">{client.name}</p>
                     <p className="text-xs text-muted">{client.industry}</p>
+                  </div>
+                  <div className="ml-auto">
+                    <a
+                      href={client.instagram}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      aria-label="Instagram JD Media"
+                    >
+                      <img src={instagramIcon} alt="Instagram" className="h-7 w-7 dark:invert" />
+                    </a>
                   </div>
                 </div>
               </div>
