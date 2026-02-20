@@ -1,0 +1,161 @@
+import { Link } from 'react-router-dom'
+import PageHero from '../components/PageHero'
+import SectionHeader from '../components/SectionHeader'
+import ServiceCard from '../components/ServiceCard'
+import Seo from '../components/Seo'
+import { clients } from '../data/clients'
+import { services } from '../data/services'
+
+const Home = () => {
+  return (
+    <>
+      <Seo
+        title="Estrategia digital con foco en crecimiento real"
+        description="Ayudamos a empresas y emprendedores a estructurar su presencia online, optimizar su inversion en Meta Ads y construir marcas solidas."
+      />
+      <PageHero
+        eyebrow="Agencia de crecimiento"
+        title="Estrategia digital con foco en crecimiento real."
+        subtitle="Ayudamos a empresas y emprendedores a estructurar su presencia online, optimizar su inversion en Meta Ads y construir marcas solidas."
+        extra={
+          <div className="card space-y-4 p-6">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">Lo que priorizamos</p>
+            <div className="space-y-3 text-sm text-muted">
+              <div className="flex items-start gap-3">
+                <span className="mt-1 h-2 w-2 rounded-full bg-accent" />
+                <p>Estrategia clara y accionable para cada canal.</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="mt-1 h-2 w-2 rounded-full bg-teal" />
+                <p>Optimizacion semanal con datos reales.</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="mt-1 h-2 w-2 rounded-full bg-ink" />
+                <p>Marcas con identidad profesional y coherente.</p>
+              </div>
+            </div>
+          </div>
+        }
+      />
+
+      <section className="section">
+        <div className="mx-auto max-w-6xl px-5">
+          <SectionHeader
+            eyebrow="Problemas + beneficios"
+            title="De la intuicion a una estrategia que se sostiene"
+            subtitle="Publicas y no pasa nada, falta de tiempo o anuncios sin resultados. Ordenamos la comunicacion y optimizamos cada paso."
+          />
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            <div className="card p-6">
+              <h3 className="text-lg font-semibold">Lo que suele pasar</h3>
+              <ul className="mt-4 space-y-3 text-sm text-muted">
+                <li>Publicas y no pasa nada.</li>
+                <li>Falta tiempo para sostener el contenido.</li>
+                <li>Anuncios sin resultados reales.</li>
+                <li>Todo depende de vos.</li>
+              </ul>
+            </div>
+            <div className="card p-6">
+              <h3 className="text-lg font-semibold">Lo que ganas con JD Media</h3>
+              <ul className="mt-4 space-y-3 text-sm text-muted">
+                <li>Estrategia clara y coordinada.</li>
+                <li>Ahorro de tiempo y foco en tu negocio.</li>
+                <li>Marca profesional y consistente.</li>
+                <li>Optimizacion semanal con datos medibles.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="mx-auto max-w-6xl px-5">
+          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+            <SectionHeader
+              eyebrow="Servicios"
+              title="Soluciones completas para crecer con orden"
+              subtitle="Desde la estrategia hasta la ejecucion, con foco en resultados y consistencia."
+            />
+          </div>
+          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {services.map((service, index) => (
+              <div
+                key={service.slug}
+                className="animate-fade-up"
+                style={{ animationDelay: `${index * 80}ms` }}
+              >
+                <ServiceCard service={service} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="mx-auto max-w-6xl px-5">
+          <SectionHeader
+            eyebrow="Metodo JD"
+            title="Un proceso claro para avanzar sin improvisar"
+            subtitle="Cada etapa tiene objetivos concretos y una forma de medir resultados."
+          />
+          <div className="mt-10 grid gap-6 md:grid-cols-5">
+            {[
+              'Diagnostico',
+              'Plan estrategico',
+              'Implementacion',
+              'Optimizacion continua',
+              'Medicion y proximos pasos',
+            ].map((step, index) => (
+              <div key={step} className="card flex flex-col gap-4 p-5">
+                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
+                  Paso {index + 1}
+                </span>
+                <p className="text-sm font-semibold text-foreground">{step}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="mx-auto max-w-6xl px-5">
+          <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+            <SectionHeader
+              eyebrow="Clientes"
+              title="Marcas que confiaron en JD Media"
+              subtitle="Trabajamos con negocios de distintos rubros, siempre con una mirada estrategica."
+            />
+            <Link
+              to="/clientes"
+              className="rounded-full border border-border/30 bg-card px-5 py-2 text-sm font-semibold text-foreground transition hover:border-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            >
+              Ver todos
+            </Link>
+          </div>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {clients.map((client) => (
+              <div key={client.name} className="card p-6">
+                <div className="flex items-center gap-4">
+                  <div className="grid h-12 w-12 place-items-center rounded-full border border-border/30 bg-background text-sm font-semibold text-foreground">
+                    {client.name
+                      .split(' ')
+                      .map((word) => word[0])
+                      .join('')
+                      .slice(0, 3)}
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">{client.name}</p>
+                    <p className="text-xs text-muted">{client.industry}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+    </>
+  )
+}
+
+export default Home
