@@ -1,5 +1,6 @@
 import CTA from '../components/CTA'
 import PageHero from '../components/PageHero'
+import Reveal from '../components/Reveal'
 import SectionHeader from '../components/SectionHeader'
 import ServiceCard from '../components/ServiceCard'
 import Seo from '../components/Seo'
@@ -19,7 +20,7 @@ const Servicios = () => {
       />
 
       <section className="section">
-        <div className="mx-auto max-w-6xl px-5">
+        <Reveal className="mx-auto max-w-6xl px-5">
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <SectionHeader
               eyebrow="Listado"
@@ -28,11 +29,13 @@ const Servicios = () => {
             />
           </div>
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
-              <ServiceCard key={service.slug} service={service} />
+            {services.map((service, index) => (
+              <Reveal key={service.slug} delay={index * 70}>
+                <ServiceCard service={service} />
+              </Reveal>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <CTA

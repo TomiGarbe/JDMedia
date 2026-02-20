@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 import CTA from '../components/CTA'
 import FaqList from '../components/FaqList'
 import PageHero from '../components/PageHero'
+import Reveal from '../components/Reveal'
 import SectionHeader from '../components/SectionHeader'
 import Seo from '../components/Seo'
 import WhatsAppButton from '../components/WhatsAppButton'
@@ -51,7 +52,7 @@ const ServiceDetail = () => {
       />
 
       <section className="section">
-        <div className="mx-auto max-w-5xl px-5">
+        <Reveal className="mx-auto max-w-5xl px-5">
           <SectionHeader
             eyebrow="Que incluye"
             title="Alcance claro para avanzar sin dudas"
@@ -65,11 +66,11 @@ const ServiceDetail = () => {
               </li>
             ))}
           </ul>
-        </div>
+        </Reveal>
       </section>
 
       <section className="section">
-        <div className="mx-auto max-w-6xl px-5">
+        <Reveal className="mx-auto max-w-6xl px-5">
           <SectionHeader
             eyebrow="Como trabajamos"
             title="Proceso simple y bien gestionado"
@@ -77,19 +78,21 @@ const ServiceDetail = () => {
           />
           <div className="mt-10 grid gap-6 md:grid-cols-4">
             {service.process.map((step, index) => (
-              <div key={step} className="card flex flex-col gap-4 p-5">
-                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
-                  Etapa {index + 1}
-                </span>
-                <p className="text-sm font-semibold text-foreground">{step}</p>
-              </div>
+              <Reveal key={step} delay={index * 70}>
+                <div className="card flex flex-col gap-4 p-5">
+                  <span className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
+                    Etapa {index + 1}
+                  </span>
+                  <p className="text-sm font-semibold text-foreground">{step}</p>
+                </div>
+              </Reveal>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <section className="section">
-        <div className="mx-auto max-w-4xl px-5">
+        <Reveal className="mx-auto max-w-4xl px-5">
           <SectionHeader
             eyebrow="FAQ"
             title="Preguntas frecuentes"
@@ -99,7 +102,7 @@ const ServiceDetail = () => {
           <div className="mt-8">
             <FaqList items={service.faqs} />
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <CTA

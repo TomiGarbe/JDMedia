@@ -1,13 +1,16 @@
 import { Link } from 'react-router-dom'
 import PageHero from '../components/PageHero'
+import Reveal from '../components/Reveal'
 import SectionHeader from '../components/SectionHeader'
 import ServiceCard from '../components/ServiceCard'
 import Seo from '../components/Seo'
-import instagramIcon from '../assets/instagram.svg'
+import InstagramIcon from '../components/icons/InstagramIcon'
 import { clients } from '../data/clients'
 import { services } from '../data/services'
 
 const Home = () => {
+  const activeClients = clients.filter((client) => client.isActive)
+
   return (
     <>
       <Seo
@@ -40,7 +43,7 @@ const Home = () => {
       />
 
       <section className="section">
-        <div className="mx-auto max-w-6xl px-5">
+        <Reveal className="mx-auto max-w-6xl px-5">
           <SectionHeader
             eyebrow="Problemas + beneficios"
             title="De la intuicion a una estrategia que se sostiene"
@@ -90,11 +93,11 @@ const Home = () => {
               </ul>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <section className="section">
-        <div className="mx-auto max-w-6xl px-5">
+        <Reveal className="mx-auto max-w-6xl px-5">
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <SectionHeader
               eyebrow="Servicios"
@@ -104,26 +107,22 @@ const Home = () => {
           </div>
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {services.map((service, index) => (
-              <div
-                key={service.slug}
-                className="animate-fade-up"
-                style={{ animationDelay: `${index * 80}ms` }}
-              >
+              <Reveal key={service.slug} delay={index * 80}>
                 <ServiceCard service={service} />
-              </div>
+              </Reveal>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <section className="section">
-        <div className="mx-auto max-w-6xl px-5">
+        <Reveal className="mx-auto max-w-6xl px-5">
           <SectionHeader
             eyebrow="Metodo JD"
             title="Un proceso claro para avanzar sin improvisar"
             subtitle="Cada etapa tiene objetivos concretos y una forma de medir resultados."
           />
-          <div className="mt-10 grid gap-6 md:grid-cols-5">
+          <div className="mt-10 grid items-stretch gap-6 md:grid-cols-5">
             {[
               'Diagnostico',
               'Plan estrategico',
@@ -131,62 +130,67 @@ const Home = () => {
               'Optimizacion continua',
               'Medicion y proximos pasos',
             ].map((step, index) => (
-              <div key={step} className="card flex flex-col gap-4 p-5 border-accent/30">
-                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
-                  Paso {index + 1}
-                </span>
-                <p className="text-sm font-semibold text-foreground">{step}</p>
-              </div>
+              <Reveal key={step} delay={index * 70} className="h-full">
+                <div className="card flex h-full min-h-[70px] flex-col gap-4 border-accent/30 p-5">
+                  <span className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
+                    Paso {index + 1}
+                  </span>
+                  <p className="text-sm font-semibold text-foreground">{step}</p>
+                </div>
+              </Reveal>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <section className="section">
-        <div className="mx-auto max-w-6xl px-5">
+        <Reveal className="mx-auto max-w-6xl px-5">
           <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
             <SectionHeader
-              eyebrow="Clientes"
-              title="Marcas que confiaron en JD Media"
-              subtitle="Trabajamos con negocios de distintos rubros, siempre con una mirada estrategica."
+              eyebrow="Clientes activos"
+              title="Clientes activos"
+              subtitle="Marcas que actualmente estan trabajando con JD Media y confian en nuestra gestion digital."
             />
             <Link
               to="/clientes"
-              className="rounded-full border border-border/30 bg-card px-5 py-2 text-sm font-semibold text-foreground transition hover:border-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              className="rounded-full border border-border/30 bg-card px-5 py-2 text-sm font-semibold text-foreground transition-all duration-300 hover:scale-[1.02] hover:border-accent hover:shadow-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
             >
               Ver todos
             </Link>
           </div>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {clients.map((client) => (
-              <div key={client.name} className="card p-6">
-                <div className="flex items-center gap-4">
-                  <div className="grid h-12 w-12 place-items-center rounded-full border border-border/30 bg-background text-sm font-semibold text-foreground">
-                    {client.name
-                      .split(' ')
-                      .map((word) => word[0])
-                      .join('')
-                      .slice(0, 3)}
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-foreground">{client.name}</p>
-                    <p className="text-xs text-muted">{client.industry}</p>
-                  </div>
-                  <div className="ml-auto">
-                    <a
-                      href={client.instagram}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      aria-label="Instagram JD Media"
-                    >
-                      <img src={instagramIcon} alt="Instagram" className="h-7 w-7 dark:invert" />
-                    </a>
+            {activeClients.map((client, index) => (
+              <Reveal key={client.id} delay={index * 70}>
+                <div className="card p-6">
+                  <div className="flex items-center gap-4">
+                    <div className="grid h-12 w-12 place-items-center rounded-full border border-border/30 bg-background text-sm font-semibold text-foreground">
+                      {client.name
+                        .split(' ')
+                        .map((word) => word[0])
+                        .join('')
+                        .slice(0, 3)}
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-foreground">{client.name}</p>
+                      <p className="text-xs text-muted">{client.industry}</p>
+                    </div>
+                    <div className="ml-auto">
+                      <a
+                        href={client.instagram}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        aria-label={`Instagram de ${client.name}`}
+                        className="inline-flex text-muted transition-colors duration-300 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                      >
+                        <InstagramIcon/>
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
     </>

@@ -1,5 +1,6 @@
 import CTA from '../components/CTA'
 import PageHero from '../components/PageHero'
+import Reveal from '../components/Reveal'
 import SectionHeader from '../components/SectionHeader'
 import Seo from '../components/Seo'
 
@@ -17,7 +18,7 @@ const Nosotros = () => {
       />
 
       <section className="section">
-        <div className="mx-auto max-w-6xl px-5">
+        <Reveal className="mx-auto max-w-6xl px-5">
           <SectionHeader
             eyebrow="Nuestra mirada"
             title="No creemos en la improvisacion"
@@ -40,38 +41,44 @@ const Nosotros = () => {
                 description:
                   'Tomamos decisiones con datos, no con intuicion.',
               },
-            ].map((item) => (
-              <div key={item.title} className="card p-6">
-                <h3 className="text-lg font-semibold">{item.title}</h3>
-                <p className="mt-3 text-sm text-muted">{item.description}</p>
-              </div>
+            ].map((item, index) => (
+              <Reveal key={item.title} delay={index * 70}>
+                <div className="card p-6">
+                  <h3 className="text-lg font-semibold">{item.title}</h3>
+                  <p className="mt-3 text-sm text-muted">{item.description}</p>
+                </div>
+              </Reveal>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <section className="section">
-        <div className="mx-auto max-w-6xl px-5">
+        <Reveal className="mx-auto max-w-6xl px-5">
           <SectionHeader
             eyebrow="Diferenciales"
             title="Una agencia pensada para escalar"
             subtitle="Acompaniamos marcas con mentalidad premium y foco en crecimiento nacional."
           />
           <div className="mt-10 grid gap-6 md:grid-cols-2">
-            <div className="card p-6">
-              <h3 className="text-lg font-semibold">Planificacion y foco</h3>
-              <p className="mt-3 text-sm text-muted">
-                Cada canal tiene objetivos definidos y un ritmo de trabajo constante.
-              </p>
-            </div>
-            <div className="card p-6">
-              <h3 className="text-lg font-semibold">Equipo senior</h3>
-              <p className="mt-3 text-sm text-muted">
-                Experiencia en marketing, diseno y performance para marcas en crecimiento.
-              </p>
-            </div>
+            <Reveal delay={40}>
+              <div className="card p-6">
+                <h3 className="text-lg font-semibold">Planificacion y foco</h3>
+                <p className="mt-3 text-sm text-muted">
+                  Cada canal tiene objetivos definidos y un ritmo de trabajo constante.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={120}>
+              <div className="card p-6">
+                <h3 className="text-lg font-semibold">Equipo senior</h3>
+                <p className="mt-3 text-sm text-muted">
+                  Experiencia en marketing, diseno y performance para marcas en crecimiento.
+                </p>
+              </div>
+            </Reveal>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <CTA

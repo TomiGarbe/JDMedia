@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
 import logo from '../assets/logo-letras.jpeg'
-import instagramIcon from '../assets/instagram.svg'
-import tiktokIcon from '../assets/tiktok.svg'
-import whatsappIcon from '../assets/whatsapp.svg'
 import { socialLinks } from '../data/socials'
+import InstagramIcon from './icons/InstagramIcon'
+import TikTokIcon from './icons/TikTokIcon'
+import WhatsAppIcon from './icons/WhatsAppIcon'
 import WhatsAppButton from './WhatsAppButton'
 
 const Footer = () => {
@@ -16,32 +16,37 @@ const Footer = () => {
             Agencia de estrategia digital y performance en Meta Ads para marcas que quieren crecer con orden.
           </p>
           <div className="flex items-center gap-3">
-            <WhatsAppButton topic="servicios de JD Media" page="Footer" variant="icon" className="text-foreground">
-              <img src={whatsappIcon} alt="WhatsApp" className="h-5 w-5 dark:invert" />
+            <WhatsAppButton
+              topic="servicios de JD Media"
+              page="Footer"
+              variant="iconPlain"
+              className="inline-flex text-muted transition-colors duration-300 hover:text-accent focus-visible:outline-none"
+            >
+              <WhatsAppIcon />
             </WhatsAppButton>
             <a
               href={socialLinks.instagram}
               target="_blank"
               rel="noreferrer noopener"
               aria-label="Instagram JD Media"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/30 bg-card transition hover:border-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              className="inline-flex text-muted transition-colors duration-300 hover:text-accent focus-visible:outline-none"
             >
-              <img src={instagramIcon} alt="Instagram" className="h-5 w-5 dark:invert" />
+              <InstagramIcon />
             </a>
             <a
               href={socialLinks.tiktok}
               target="_blank"
               rel="noreferrer noopener"
               aria-label="TikTok JD Media"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/30 bg-card transition hover:border-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              className="inline-flex text-muted transition-colors duration-300 hover:text-accent focus-visible:outline-none"
             >
-              <img src={tiktokIcon} alt="TikTok" className="h-5 w-5 dark:invert" />
+              <TikTokIcon />
             </a>
           </div>
         </div>
         <div className="grid gap-6 text-sm md:grid-cols-2">
           <div className="space-y-2">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">Secciones</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-bg">Secciones</p>
             <nav className="flex flex-col gap-2 text-muted">
               <Link
                 className="hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
@@ -70,7 +75,7 @@ const Footer = () => {
             </nav>
           </div>
           <div className="space-y-2">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">Social</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-bg">Social</p>
             <nav className="flex flex-col gap-2 text-muted">
               <a
                 className="hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
