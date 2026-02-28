@@ -94,6 +94,7 @@
     will-change: opacity, transform;
   }
 
+  .reveal.reveal--visible,
   .reveal.visible {
     opacity: 1;
     transform: translateY(0);
@@ -110,6 +111,7 @@
   }
 
   .reveal,
+  .reveal.reveal--visible,
   .reveal.visible {
     opacity: 1 !important;
     transform: none !important;

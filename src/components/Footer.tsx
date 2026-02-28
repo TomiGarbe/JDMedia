@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import logo from '../assets/logo-letras.jpeg'
+import logo from '../assets/logo-letras.png'
 import { socialLinks } from '../data/socials'
 import InstagramIcon from './icons/InstagramIcon'
 import TikTokIcon from './icons/TikTokIcon'
@@ -11,7 +11,7 @@ const Footer = () => {
     <footer className="border-t border-accent/20 bg-background">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-5 py-10 md:flex-row md:items-start md:justify-between">
         <div className="space-y-4">
-          <img src={logo} alt="JD Media" className="h-10 w-auto object-contain" />
+          <img src={logo} alt="JD Media" className="h-7 w-auto object-contain" />
           <p className="max-w-xs text-sm text-muted">
             Agencia de estrategia digital y performance en Meta Ads para marcas que quieren crecer con orden.
           </p>

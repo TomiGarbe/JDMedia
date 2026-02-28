@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom'
+import ClientCard from '../components/ClientCard'
 import PageHero from '../components/PageHero'
 import Reveal from '../components/Reveal'
 import SectionHeader from '../components/SectionHeader'
 import ServiceCard from '../components/ServiceCard'
 import Seo from '../components/Seo'
-import InstagramIcon from '../components/icons/InstagramIcon'
 import { clients } from '../data/clients'
 import { services } from '../data/services'
 
@@ -161,32 +161,7 @@ const Home = () => {
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {activeClients.map((client, index) => (
               <Reveal key={client.id} delay={index * 70}>
-                <div className="card p-6">
-                  <div className="flex items-center gap-4">
-                    <div className="grid h-12 w-12 place-items-center rounded-full border border-border/30 bg-background text-sm font-semibold text-foreground">
-                      {client.name
-                        .split(' ')
-                        .map((word) => word[0])
-                        .join('')
-                        .slice(0, 3)}
-                    </div>
-                    <div>
-                      <p className="text-sm font-semibold text-foreground">{client.name}</p>
-                      <p className="text-xs text-muted">{client.industry}</p>
-                    </div>
-                    <div className="ml-auto">
-                      <a
-                        href={client.instagram}
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        aria-label={`Instagram de ${client.name}`}
-                        className="inline-flex text-muted transition-colors duration-300 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-                      >
-                        <InstagramIcon/>
-                      </a>
-                    </div>
-                  </div>
-                </div>
+                <ClientCard client={client} />
               </Reveal>
             ))}
           </div>
